@@ -19,5 +19,5 @@ The app replicates the Pokedex from the Pokemon game series. In the base version
 - views folder.
 
 ## To do:
-The basic application is scheduled to be completed by the end of November 24, 2021.
+The basic application is scheduled to be completed by the end of November 28, 2021.
 Then I'll be working on the enhanced version with a search engine and filtering by tags.
