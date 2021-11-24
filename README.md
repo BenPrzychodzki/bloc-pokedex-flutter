@@ -1,16 +1,23 @@
 # pokedex_app
+## Description
 
-Flutter project with an usage of BLoC to recreate the pokedex
+The app replicates the Pokedex from the Pokemon game series. In the base version, the user will be able to see a list of all pokemons, and when clicking on any of them, open a list of details.
 
-## Getting Started
+## Technical aspects of the app:
+- Application written in Flutter programming tool, in Dart language.
+- BLoC package (version 8.0.0) used to separate logic and UI.
+- Using a RESTful API from https://pokeapi.co/ to get and proccess data the to display it in a readable way to the user.
+- Rich commentary and consistent application structure to make the code easier to understand.
 
-This project is a starting point for a Flutter application.
+## File structure:
+**/repos** - contains project repositories and models,  
+**/screens** - contains folders for each screen,  
+**/screens/screenname** - folder with UI and logic for particular screen, contains:
+- screenname_event.dart,
+- screenname_state.dart,
+- screenname_bloc.dart,
+- views folder.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## To do:
+The basic application is scheduled to be completed by the end of November 24, 2021.
+Then I'll be working on the enhanced version with a search engine and filtering by tags.
