@@ -6,6 +6,7 @@ import '../details_bloc.dart';
 import '../details_event.dart';
 import '../details_state.dart';
 
+/// View shown after clicking on a grid view item.
 class DetailsView extends StatelessWidget {
   const DetailsView({Key? key}) : super(key: key);
 
@@ -76,6 +77,7 @@ class DetailsView extends StatelessWidget {
     });
   }
 
+  /// Combine types list to string.
   String _getTypesString(List<String> types) {
     String typesString = "";
     types.forEach((element) {
@@ -84,6 +86,7 @@ class DetailsView extends StatelessWidget {
     return typesString;
   }
 
+  /// Used for capitalize strings (e.g. pokemon names)
   String capitalize(String string) {
     if (string.isEmpty) {
       return string;

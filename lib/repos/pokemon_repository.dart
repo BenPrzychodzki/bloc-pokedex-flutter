@@ -10,9 +10,8 @@ class PokemonRepository {
   final baseUrl = 'pokeapi.co';
   final client = http.Client();
 
+  /// Get pokemon list data from an API and make an object from it.
   Future<PokemonPageResponseModel?> getPokemonPage(int pageIndex) async {
-    /// Get pokemon list data from an API and make an object from it
-
     // set of parameters attached to the end of a url (e.g. ?limit=200&offset=0)
     final queryParameters = {
       'limit': '200',
@@ -34,8 +33,8 @@ class PokemonRepository {
     }
   }
 
+  /// Get pokemon details data from an API.
   Future<PokemonInfoResponseModel?> getPokemonInfo(int pokemonId) async {
-    /// Get pokemon details data from an API
     final uri = Uri.https(baseUrl, '/api/v2/pokemon/$pokemonId');
 
     try {
@@ -47,8 +46,8 @@ class PokemonRepository {
     }
   }
 
+  /// Get pokemon flavor text from an API and create an instance of SpeciesInfoResponseModel from it.
   Future<SpeciesInfoResponseModel?> getPokemonSpeciesInfo(int pokemonId) async {
-    /// Get pokemon flavor text from an API and pass it to an instance of
     final uri = Uri.https(baseUrl, '/api/v2/pokemon-species/$pokemonId');
 
     try {

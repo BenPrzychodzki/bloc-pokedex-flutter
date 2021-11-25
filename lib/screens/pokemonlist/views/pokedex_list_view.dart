@@ -15,9 +15,10 @@ class PokedexListView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Pokedex"),
+        title: const Text("Pokedex"),
         backgroundColor: Colors.red,
       ),
+      // Listen for DetailsBloc state changes (happen when user clicks tile on a grid view)
       body: BlocListener<DetailsBloc, DetailsState?>(
         listener: (context, state) {
           if (state is DetailsPageInitial) {
@@ -29,6 +30,7 @@ class PokedexListView extends StatelessWidget {
                     )));
           }
         },
+        // Build UI depending on current PokemonListState
         child: BlocBuilder<PokemonListBloc, PokemonListState>(
           builder: (context, state) {
             if (state is PokemonListLoadInProgress) {
@@ -48,6 +50,7 @@ class PokedexListView extends StatelessWidget {
     );
   }
 
+  /// Return grid view with Pokemon populated with data from a state.
   GridView _pokemonGridView(PokemonListLoadSuccess state) {
     return GridView.builder(
         gridDelegate:

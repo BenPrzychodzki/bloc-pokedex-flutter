@@ -1,3 +1,5 @@
+/// Class created to combine data from two requests
+/// (pokemon info and pokemon species) for easy display in UI.
 class PokemonDetails {
   final int id;
   final String name;

@@ -7,6 +7,7 @@ import 'package:pokedex_app/repos/pokemon_repository.dart';
 import 'details_event.dart';
 import 'details_state.dart';
 
+/// Bloc with the logic used in detailed view (after clicking on a tile in a grid view).
 class DetailsBloc extends Bloc<DetailsEvent, DetailsState?> {
   final _pokemonRepository = PokemonRepository();
   DetailsBloc() : super(null) {

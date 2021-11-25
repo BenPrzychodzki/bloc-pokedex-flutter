@@ -2,16 +2,14 @@ import 'package:pokedex_app/repos/models/pokemon_model.dart';
 
 abstract class PokemonListState {}
 
-class PokemonListInitial extends PokemonListState {
-  /// First app state
-}
+/// App initial state.
+class PokemonListInitial extends PokemonListState {}
 
-class PokemonListLoadInProgress extends PokemonListState {
-  /// Switch to if awaiting for data
-}
+/// Switch to if awaiting for data.
+class PokemonListLoadInProgress extends PokemonListState {}
 
+/// Switch to if data was loaded successfully.
 class PokemonListLoadSuccess extends PokemonListState {
-  /// Switch to if data was loaded successfully
   final List<PokemonModel> pokemonList;
   final bool canLoadNextPage;
 
@@ -19,8 +17,8 @@ class PokemonListLoadSuccess extends PokemonListState {
       {required this.pokemonList, required this.canLoadNextPage});
 }
 
+/// Switch to if can't load data from a website (e.g. no internet connection).
 class PokemonListLoadFail extends PokemonListState {
-  /// Switch to if can't load data from a website (e.g. no internet connection)
   final dynamic error;
 
   PokemonListLoadFail({required this.error});

@@ -3,8 +3,8 @@ import 'package:pokedex_app/repos/pokemon_repository.dart';
 import 'package:pokedex_app/screens/pokemonlist/pokemonlist_event.dart';
 import 'package:pokedex_app/screens/pokemonlist/pokemonlist_state.dart';
 
+/// Bloc providing all necessary logic for pokemon list screen.
 class PokemonListBloc extends Bloc<PokemonListEvent, PokemonListState> {
-  /// Bloc providing all necessary logic for pokemon list screen.
   final _pokemonRepository = PokemonRepository();
 
   PokemonListBloc() : super(PokemonListInitial()) {

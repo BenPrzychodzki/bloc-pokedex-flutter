@@ -7,8 +7,8 @@
 // name:"wobbuffet"
 // url:"https://pokeapi.co/api/v2/pokemon/202/"
 
+/// Pokemon model for keeping all the data to show in list view
 class PokemonModel {
-  /// Pokemon model for keeping all the data to show in list view
   final int id;
   final String name;
 
@@ -18,8 +18,8 @@ class PokemonModel {
 
   PokemonModel({required this.id, required this.name});
 
+  /// Create a pokemon model from a json data
   factory PokemonModel.fromJson(Map<String, dynamic> json) {
-    /// Create a pokemon model from a json data
     final name = json['name'];
     final url = json['url'];
     final id = int.parse(url.split('/')[6]); // get a pokemon id from url
