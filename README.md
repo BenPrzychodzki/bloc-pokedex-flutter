@@ -1,7 +1,7 @@
 # pokedex_app
 ## Description
 
-The app replicates the Pokedex from the Pokemon game series. In the base version, the user will be able to see a list of all pokemons, and when clicking on any of them, open a list of details.
+The app replicates the Pokedex from the Pokemon game series. In the base version, the user is able to see a list of all pokemons, and when clicking on any of them, open a list of details.
 
 ## Technical aspects of the app:
 - Application written in Flutter programming tool, in Dart language.
