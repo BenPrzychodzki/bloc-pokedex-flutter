@@ -19,5 +19,8 @@ The app replicates the Pokedex from the Pokemon game series. In the base version
 - views folder.
 
 ## To do:
-The basic application is scheduled to be completed by the end of November 28, 2021.
-Then I'll be working on the enhanced version with a search engine and filtering by tags.
+- Enhanced version with following features:
+- Search engine and filtering by tags,
+- Ability to mark caught pokemons,
+- Expanded and more interesting UI,
+- Option to switch between shiny and normal Pokemon.
