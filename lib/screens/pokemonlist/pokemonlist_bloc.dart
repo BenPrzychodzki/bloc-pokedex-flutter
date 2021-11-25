@@ -19,7 +19,7 @@ class PokemonListBloc extends Bloc<PokemonListEvent, PokemonListState> {
           await _pokemonRepository.getPokemonPage(event.page);
       // invoke get page method from poke repo and emit new state based on data we'll get
       emit(PokemonListLoadSuccess(
-          pokemonList: pokemonPageResponse.pokemonList,
+          pokemonList: pokemonPageResponse!.pokemonList,
           canLoadNextPage: pokemonPageResponse.canLoadNextPage));
     } catch (e) {
       emit(PokemonListLoadFail(error: e));

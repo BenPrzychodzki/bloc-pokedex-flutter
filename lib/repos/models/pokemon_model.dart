@@ -8,7 +8,7 @@
 // url:"https://pokeapi.co/api/v2/pokemon/202/"
 
 class PokemonModel {
-  /// Pokemon model for keeping all the data about required pokemon
+  /// Pokemon model for keeping all the data to show in list view
   final int id;
   final String name;
 
