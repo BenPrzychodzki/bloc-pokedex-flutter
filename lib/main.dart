@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex_app/screens/details/details_bloc.dart';
 import 'package:pokedex_app/screens/pokemonlist/pokemonlist_bloc.dart';
@@ -6,6 +7,8 @@ import 'package:pokedex_app/screens/pokemonlist/pokemonlist_event.dart';
 import 'package:pokedex_app/screens/pokemonlist/views/pokedex_list_view.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
   runApp(MyApp());
 }
 
