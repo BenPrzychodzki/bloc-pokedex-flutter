@@ -14,7 +14,7 @@ class PokemonRepository {
   Future<PokemonPageResponseModel?> getPokemonPage(int pageIndex) async {
     // set of parameters attached to the end of a url (e.g. ?limit=200&offset=0)
     final queryParameters = {
-      'limit': '200',
+      'limit': '50',
       'offset': (pageIndex * 200).toString()
     };
 

@@ -23,7 +23,7 @@ class PokemonInfoResponseModel {
     return PokemonInfoResponseModel(
         id: json['id'],
         name: json['name'],
-        imageUrl: json['sprites']['other']['official-artwork']['front_default'],
+        imageUrl: json['sprites']['front_default'],
         types: types,
         height: json['height'],
         weight: json['weight']);

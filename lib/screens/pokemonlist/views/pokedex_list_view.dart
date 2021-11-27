@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex_app/screens/details/details_bloc.dart';
 import 'package:pokedex_app/screens/details/details_event.dart';
 import 'package:pokedex_app/screens/details/details_state.dart';
+import 'package:pokedex_app/screens/details/views/details_improved_view.dart';
 import 'package:pokedex_app/screens/details/views/details_view.dart';
+import '../../type_to_color.dart';
 import '../pokemonlist_bloc.dart';
 import '../pokemonlist_state.dart';
 
@@ -26,7 +28,7 @@ class PokedexListView extends StatelessWidget {
                 builder: (_) => BlocProvider.value(
                       value: BlocProvider.of<DetailsBloc>(context)
                         ..add(LoadDetailsPopupData(pokemonId: state.pokemonId)),
-                      child: DetailsView(),
+                      child: DetailsView(typeColors: typeToColor(state.types)),
                     )));
           }
         },
@@ -39,7 +41,7 @@ class PokedexListView extends StatelessWidget {
               return _pokemonGridView(state);
             } else if (state is PokemonListLoadFail) {
               return Center(
-                child: Text(state.error.toString()),
+                child: Text("error: ${state.error}"),
               );
             } else {
               return Container();
@@ -59,10 +61,12 @@ class PokedexListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () => BlocProvider.of<DetailsBloc>(context).add(
-                ShowDetailsPopupEvent(pokemonId: state.pokemonList[index].id)),
+                ShowDetailsPopupEvent(pokemonId: state.pokemonList[index].id,
+                types: state.pokemonList[index].types)),
             child: Hero(
               tag: 'details/${state.pokemonList[index].id}',
               child: Card(
+                color: typeToColor(state.pokemonList[index].types).first,
                 child: GridTile(
                   child: Column(
                     children: [

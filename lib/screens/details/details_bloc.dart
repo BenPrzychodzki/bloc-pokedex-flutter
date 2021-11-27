@@ -12,7 +12,7 @@ class DetailsBloc extends Bloc<DetailsEvent, DetailsState?> {
   final _pokemonRepository = PokemonRepository();
   DetailsBloc() : super(null) {
     on<ShowDetailsPopupEvent>((event, emit) {
-      emit(DetailsPageInitial(pokemonId: event.pokemonId));
+      emit(DetailsPageInitial(pokemonId: event.pokemonId, types: event.types));
     });
     on<LoadDetailsPopupData>(_onLoadDetailsPopupData);
     on<CloseDetailsPopup>((event, emit) {

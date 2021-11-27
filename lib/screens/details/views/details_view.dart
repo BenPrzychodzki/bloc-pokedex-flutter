@@ -6,12 +6,15 @@ import '../details_bloc.dart';
 import '../details_event.dart';
 import '../details_state.dart';
 
+/*
 /// View shown after clicking on a grid view item.
 class DetailsView extends StatelessWidget {
   const DetailsView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
     return WillPopScope(
         onWillPop: () {
           BlocProvider.of<DetailsBloc>(context).add(CloseDetailsPopup());
@@ -93,4 +96,6 @@ class DetailsView extends StatelessWidget {
     }
     return string[0].toUpperCase() + string.substring(1);
   }
-}
+}*/
+
+

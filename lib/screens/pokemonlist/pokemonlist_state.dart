@@ -1,4 +1,5 @@
 import 'package:pokedex_app/repos/models/pokemon_model.dart';
+import 'package:pokedex_app/repos/models/pokemonlist_tile_model.dart';
 
 abstract class PokemonListState {}
 
@@ -10,7 +11,7 @@ class PokemonListLoadInProgress extends PokemonListState {}
 
 /// Switch to if data was loaded successfully.
 class PokemonListLoadSuccess extends PokemonListState {
-  final List<PokemonModel> pokemonList;
+  final List<PokemonListTileModel> pokemonList;
   final bool canLoadNextPage;
 
   PokemonListLoadSuccess(

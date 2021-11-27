@@ -20,6 +20,10 @@ class PokemonModel {
 
   /// Create a pokemon model from a json data
   factory PokemonModel.fromJson(Map<String, dynamic> json) {
+
+    // final types = (json['types'] as List)
+    //     .map((typeJson) => typeJson['type']['name'] as String)
+    //     .toList();
     final name = json['name'];
     final url = json['url'];
     final id = int.parse(url.split('/')[6]); // get a pokemon id from url

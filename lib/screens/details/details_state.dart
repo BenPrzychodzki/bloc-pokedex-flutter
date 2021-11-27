@@ -5,8 +5,9 @@ abstract class DetailsState {}
 /// Switch to if pokemon was clicked from a grid view and open hero view
 class DetailsPageInitial extends DetailsState {
   final int pokemonId;
+  final List<String> types;
 
-  DetailsPageInitial({required this.pokemonId});
+  DetailsPageInitial({required this.pokemonId, required this.types});
 }
 
 /// Show loading screen until data is loaded
