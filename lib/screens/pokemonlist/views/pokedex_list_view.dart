@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pokedex_app/screens/capitalize.dart';
 import 'package:pokedex_app/screens/details/details_bloc.dart';
 import 'package:pokedex_app/screens/details/details_event.dart';
 import 'package:pokedex_app/screens/details/details_state.dart';
@@ -61,19 +63,32 @@ class PokedexListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () => BlocProvider.of<DetailsBloc>(context).add(
-                ShowDetailsPopupEvent(pokemonId: state.pokemonList[index].id,
-                types: state.pokemonList[index].types)),
-            child: Hero(
-              tag: 'details/${state.pokemonList[index].id}',
-              child: Card(
-                color: typeToColor(state.pokemonList[index].types).first,
-                child: GridTile(
-                  child: Column(
-                    children: [
-                      Image.network(state.pokemonList[index].imageUrl),
-                      Text(state.pokemonList[index].name)
-                    ],
-                  ),
+                ShowDetailsPopupEvent(
+                    pokemonId: state.pokemonList[index].id,
+                    types: state.pokemonList[index].types)),
+            child: Card(
+              color: typeToColor(state.pokemonList[index].types).first,
+              child: GridTile(
+                child: Column(
+                  children: [
+                    Hero(
+                        tag: 'details/${state.pokemonList[index].id}',
+                        child: CachedNetworkImage(
+                            imageUrl: state.pokemonList[index].imageUrl)),
+                    Stack(children: [
+                      Text(capitalize(state.pokemonList[index].name),
+                          style: TextStyle(
+                            fontSize: 20,
+                            foreground: Paint()
+                              ..style = PaintingStyle.stroke
+                              ..strokeWidth = 1
+                              ..color = Colors.black,
+                          )),
+                      Text(capitalize(state.pokemonList[index].name),
+                          style: const TextStyle(
+                              fontSize: 20, color: Colors.white)),
+                    ])
+                  ],
                 ),
               ),
             ),
