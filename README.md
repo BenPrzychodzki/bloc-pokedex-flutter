@@ -22,5 +22,7 @@ The app replicates the Pokedex from the Pokemon game series. In the base version
 - Enhanced version with following features:
 - Search engine and filtering by tags,
 - Ability to mark caught pokemons,
-- Expanded and more interesting UI,
+- Expanded and more interesting UI, #WORK IN PROGRESS
 - Option to switch between shiny and normal Pokemon.
+
+You can track changes in the enhanced branch.
