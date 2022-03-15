@@ -1,4 +1,7 @@
 # pokedex_app
+
+The app was made in November, 2021
+
 ## Description
 
 The app replicates the Pokedex from the Pokemon game series. In the base version, the user is able to see a list of all pokemons, and when clicking on any of them, open a list of details.
